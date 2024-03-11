@@ -24,27 +24,9 @@
 #include <iostream>
 
 int main() {
-    // 初始化地图大小为25x25，并标记一些障碍物
+    // initialize a 25x25 grid map锛宮arking some obstacles
     GridMap map(25, 25);
-    //std::vector<std::pair<int, int>> obstacles = {// 设置障碍物坐标(左下角为1，1)
-    //    {5, 22},{5, 23},
-    //    {6, 19},
-    //    {7, 11},{7, 12},
-    //    {8, 6},{8, 7},
-    //    {9, 6},{9, 7},
-    //    {11, 15},
-    //    {12, 15},
-    //    {13, 10},{13, 15},{13, 20},{13, 21},
-    //    {14, 10},{14, 15},{14, 20},{14, 21},{14, 22},
-    //    {15, 15},{15, 21},
-    //    {16, 3},{16, 4},{16, 15},
-    //    {17, 3},{17, 4},
-    //    {18, 11},
-    //    {19, 11},
-    //    {22, 1},{22, 2},{22, 3},{22, 4},{22, 5},{22, 6},{22, 7},{22, 8},{22, 9},
-    //    {23, 21}
-    //};    
-    std::vector<std::pair<int, int>> obstacles = {// 设置障碍物坐标
+    std::vector<std::pair<int, int>> obstacles = {// set obstacles
     {4, 21}, {4, 22},
     {5, 18},
     {6, 10}, {6, 11},
@@ -66,9 +48,9 @@ int main() {
 
     int start_x, start_y, end_x, end_y;
 
-    std::cout << "输入起点坐标（空格分隔）";
+    std::cout << "input start coordinates(divide via space)";
     std::cin >> start_x >> start_y ;
-    std::cout << "输入终点坐标（空格分隔）";
+    std::cout << "input ending coordinates(divide via space)";
     std::cin >> end_x >> end_y;
 
     std::pair<int, int> start(start_x, start_y);
@@ -76,10 +58,10 @@ int main() {
     //std::pair<int, int> start(0, 24); 
     //std::pair<int, int> end(24, 0); 
   
-    AntColony antColony(map, 100, 10, start, end); // 初始化蚁群算法
-    antColony.run(); // 运行蚁群算法
+    AntColony antColony(map, 100, 10, start, end); // initialize Ant Colony algorithm where 100 is ants counts and 10 is max iteration
+    antColony.run(); // run Ant Colony algorithm
 
-    antColony.printBestPath(); // 输出找到的最佳路径
+    antColony.printBestPath(); // print best path
 
     return 0;
 }
